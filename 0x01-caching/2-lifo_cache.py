@@ -27,4 +27,8 @@ class LIFOCache(BaseCaching):
             print(f'DISCARD: {last_item_key}')
 
     def get(self, key):
-
+        """returns the value of a key if the key exists"""
+        value = self.cache_data.get(key)
+        if not value or key is None:
+            return None
+        return value
